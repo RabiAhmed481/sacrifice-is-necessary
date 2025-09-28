@@ -6,7 +6,7 @@
 #characters
 define y = Character("You", color="#dbcd51")
 define n = Character ("...", color="#A60909")
-deine u = Character("...", color="#2028B9")
+define u = Character("...", color="#2028B9")
 define v = Character("Veronica", color="#A60909")
 define b = Character("Ben", color="#2028B9")
 
@@ -36,7 +36,7 @@ image inside_house = "veronica house inside"
 image room_night = "bed night"
 image room_day = "bed morning"
 image cafe = "caf"
-iamage ballroom = "ball.jpg"
+image ballroom = "ball.jpg"
 
 # The game starts here.
 
@@ -260,12 +260,12 @@ label ending1:
 
 
 label ending2:
-    backround room_night with fade
+    scene room_night with fade
     show veronica_casual_ball with dissolve
     v "Surprise! I thought it would be fun to take you to a ball!"
     y "Wow, this is amazing! Thank you so much!"
     v "I'm glad you like it! Let's go have some fun!"
-    background ballroom with fade
+    scene ballroom with fade
     "*you and veronica spend the night dancing and enjoying the ball*"
     "*you see someone staring at you from the corner of your eye*"
     y "Veronica don't freak out but that person over there has been staring at me the whole night"
@@ -275,23 +275,23 @@ label ending2:
     hide veronica_slight_ball
     show veronica_angry_ball
     v "Hey! Can we help you with something?"
-    show veronica_angry_ball left
-    show ben_scared right
+    hide veronica_angry_ball 
+    show ben_scared 
     u "I-I'm sorry, I didn't mean to stare. It's just..."
     y "OH MY! Ben? Is that you?"
     hide ben_scared
-    show veronica_slight_ball
-    show ben_relieved 
+    hide sshow veronica_slight_ball
+    show ben_scared 
     b "Thank goodness you recognized me! I hope you didn't think I was a creep"
     y "No, not at all! It's just been a while since I've seen you"
     y "Ive.. missed you"
     b "Me too.."
     v "Do you know each other?"
-    hide ben_relieved
+    hide ben_scared
     show ben_sad
     y "Yeah.. we used to be close"
     b "It was special"
-    v "Hey can I talk to you for a moment in private?
+    v "Hey can I talk to you for a moment in private?"
     hide ben_sad
     hide veronica_slight_ball
     show veronica_casual_ball
@@ -299,7 +299,7 @@ label ending2:
     y "Well.. it's kinda hard to talk about"
     v "You can tell me, I won't judge"
     y "It's just.. we were in a relationship but it ended because we both weren't ready for something more commited"
-    y "I still love him...
+    y "I still love him..."
     v "well, if you love him maybe you should give it another chance"
     y "I don't know.."
     v "Well, the night is almost over, you should go talk to him"
@@ -331,7 +331,7 @@ label ending2:
             jump house_end
             
 label house_end:
-    backround inside_house with fade
+    scene inside_house with fade
     show veronica_slight_ball 
     v "Before ben comes here I need to tell you something"
     y "What is it?"
@@ -344,9 +344,9 @@ label house_end:
     y "No.. please.. I don't want this.."
     v "It's for the best, you'll see"
     "*you feel yourself losing consciousness as the world around you fades to black*"
-    background black with fade
+    scene black with fade
     "*you wake up feeling different, stronger*"
-    backround room_night with fade
+    scene room_night with fade
     show veronica_vampire
     v "Welcome to your new life"
     v "I'm sorry you didn't ask for this but before you can fully gain your strength you need..."
@@ -358,8 +358,8 @@ label house_end:
     y "Why would you do this to me?"
     v "Because, I wanted you as a friend forever.."
     "*the door creaks open, Ben steps into the room*"
-    show veronica_vampire left
-    show ben_confused right
+    hide veronica_vampire 
+    show ben_confused 
     b "Hey... what's going on in here? Are you okay?"
     y "Ben... run!"
     v "He can’t. You’re already feeling the hunger, aren’t you?"
@@ -386,7 +386,8 @@ label house_end:
             v "Then you’ll die, and so will he. I warned you."
             "*your body wracks with pain as the hunger eats you alive*"
             "*Veronica’s face hardens — she grabs Ben and drains him herself*"
-            show veronica_vampire feeding
+            hide ben_confused
+            show veronica_vampire
             "*you scream as the last of your strength fades, darkness swallowing you*"
             scene black with fade
             "*ENDING 2 (alternate): Refusal to sacrifice leads to the death of yours, and Ben’s.*"
